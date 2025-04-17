@@ -1,0 +1,54 @@
+#############################
+# Unreal Engine .gitignore #
+#############################
+
+# Ignore build & temporary files
+Binaries/
+Build/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Ignore Visual Studio / IDE stuff
+.vscode/
+.vs/
+*.VC.db
+*.VC.opendb
+*.sdf
+*.suo
+*.opensdf
+*.log
+*.tlog
+*.pdb
+*.ipch
+*.obj
+*.dll
+*.exe
+*.tmp
+*.cache
+
+# Ignore MacOS/Unix stuff
+.DS_Store
+
+# Optional: Rider / JetBrains IDE
+.idea/
+
+# Optional: Xcode
+*.xcodeproj
+*.xcworkspace
+
+##################################
+# KEEP what you actually need!  #
+##################################
+
+# ✅ Keep source code
+!Source/
+
+# ✅ Keep assets (blueprints, materials, levels, etc.)
+!Content/
+
+# ✅ Keep configs
+!Config/
+
+# ✅ Keep project file
+!*.uproject
