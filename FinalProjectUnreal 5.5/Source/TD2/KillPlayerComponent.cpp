@@ -43,7 +43,7 @@ void UKillPlayerComponent::OnHit(UPrimitiveComponent* HitComponent, AActor* Othe
 			if (Character->bIsInvincible)
 			{
 				if (GEngine)
-					GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Cyan, TEXT("Player is INVINCIBLE!"));
+					GEngine->AddOnScreenDebugMessage(1, 1.5f, FColor::Cyan, TEXT("Player is INVINCIBLE!"));
 				return; 
 			}
 

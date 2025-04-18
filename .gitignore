@@ -1,54 +1,51 @@
-#############################
-# Unreal Engine .gitignore #
-#############################
+# ================================
+# Unreal Engine - CLEAN GITIGNORE
+# ================================
 
-# Ignore build & temporary files
+# Ignore build and temporary files
 Binaries/
-Build/
 DerivedDataCache/
 Intermediate/
 Saved/
-
-# Ignore Visual Studio / IDE stuff
 .vscode/
 .vs/
-*.VC.db
-*.VC.opendb
-*.sdf
+
+# Ignore Visual Studio temporary files
 *.suo
-*.opensdf
-*.log
-*.tlog
-*.pdb
-*.ipch
-*.obj
+*.user
+*.userosscache
+*.sdf
+*.cache
+*.db
+*.opendb
+*.VC.db
+
+# macOS and Windows hidden files
+.DS_Store
+Thumbs.db
+
+# Ignore compiled binaries
 *.dll
 *.exe
-*.tmp
-*.cache
+*.pdb
+*.obj
 
-# Ignore MacOS/Unix stuff
-.DS_Store
-
-# Optional: Rider / JetBrains IDE
-.idea/
-
-# Optional: Xcode
-*.xcodeproj
-*.xcworkspace
-
-##################################
-# KEEP what you actually need!  #
-##################################
-
-# ✅ Keep source code
-!Source/
-
-# ✅ Keep assets (blueprints, materials, levels, etc.)
-!Content/
-
-# ✅ Keep configs
-!Config/
-
-# ✅ Keep project file
+# Allow necessary project files
 !*.uproject
+!Source/
+!Content/
+!Content/**.uasset
+!Content/**.umap
+!Config/
+!Plugins/
+!Scripts/
+!*.target.cs
+!*.build.cs
+
+# Optional: Keep custom Saved config if needed
+!Saved/Config/WindowsEditor/
+
+# Ignore backup and autosave files
+*.bak
+*.tmp
+*.orig
