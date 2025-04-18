@@ -38,12 +38,15 @@ void AItem::OnOverLapBegin(UPrimitiveComponent* OverlappedComponent, AActor* Oth
             
             if (UWorld* World = GetWorld())
             {
+                
                 if(ATP_ThirdPersonGameMode* GameMode = Cast<ATP_ThirdPersonGameMode>(World->GetAuthGameMode()))
                 {
+                    /*
                     GameMode->IncrementScore();
 
                     SetActorHiddenInGame(true);
                     SetActorEnableCollision(false);
+                    */
                 }
             }
             
