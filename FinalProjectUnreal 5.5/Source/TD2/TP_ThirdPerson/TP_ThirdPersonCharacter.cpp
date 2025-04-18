@@ -1,4 +1,4 @@
-// Copyright Epic Games, Inc. All Rights Reserved.
+﻿// Copyright Epic Games, Inc. All Rights Reserved.
 
 #include "TP_ThirdPersonCharacter.h"
 #include "Engine/LocalPlayer.h"
@@ -158,3 +158,35 @@ void ATP_ThirdPersonCharacter::CallRestartPlayer()
 		}
 	}
 }
+
+void ATP_ThirdPersonCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (bIsInvincible)
+	{
+		if (GEngine)
+			GEngine->AddOnScreenDebugMessage(10, 0.01f, FColor::Cyan, TEXT("INVINCIBLE"));
+	}
+}
+
+
+void ATP_ThirdPersonCharacter::ActivateInvincibility()
+{
+	if (bIsInvincible) return;
+
+	bIsInvincible = true;
+
+	if (GEngine)
+		GEngine->AddOnScreenDebugMessage(-1, 2.f, FColor::Yellow, TEXT("Invincibility Activated"));
+
+	GetWorldTimerManager().SetTimer(InvincibilityTimerHandle, [this]()
+		{
+			bIsInvincible = false;
+
+			if (GEngine)
+				GEngine->AddOnScreenDebugMessage(1, 2.f, FColor::Red, TEXT("Invincibility Ended"));
+
+		}, 5.0f, false);
+}
+

@@ -48,7 +48,10 @@ public:
 	ATP_ThirdPersonCharacter();
 
 	void CallRestartPlayer();
-	
+
+	void ActivateInvincibility();
+
+	bool bIsInvincible = false;
 
 protected:
 
@@ -67,6 +70,11 @@ protected:
 	
 	// To add mapping context
 	virtual void BeginPlay();
+
+	virtual void Tick(float DeltaTime) override;
+
+private:
+	FTimerHandle InvincibilityTimerHandle;
 
 public:
 	/** Returns CameraBoom subobject **/

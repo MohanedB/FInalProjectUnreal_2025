@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+﻿// Fill out your copyright notice in the Description page of Project Settings.
 
 
 #include "KillPlayerComponent.h"
@@ -40,7 +40,14 @@ void UKillPlayerComponent::OnHit(UPrimitiveComponent* HitComponent, AActor* Othe
 		ATP_ThirdPersonCharacter* Character = Cast<ATP_ThirdPersonCharacter>(OtherActor);
 		if (Character)
 		{
-			Character->CallRestartPlayer();
+			if (Character->bIsInvincible)
+			{
+				if (GEngine)
+					GEngine->AddOnScreenDebugMessage(-1, 1.5f, FColor::Cyan, TEXT("Player is INVINCIBLE!"));
+				return; 
+			}
+
+			Character->CallRestartPlayer(); 
 		}
 	}
 }

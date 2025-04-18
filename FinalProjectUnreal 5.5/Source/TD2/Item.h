@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+//Fill out your copyright notice in the Description page of Project Settings.
 
 #pragma once
 
@@ -20,6 +20,9 @@ public:
 
 	UFUNCTION()
 	void RespawnItem();
+
+	virtual void OnCollected();
+
 
 protected:
 	// Called when the game starts or when spawned

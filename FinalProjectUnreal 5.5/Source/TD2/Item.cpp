@@ -30,12 +30,12 @@ void AItem::OnOverLapBegin(UPrimitiveComponent* OverlappedComponent, AActor* Oth
         if (Character)
         {
 
+          
             OnCollected();
-
             SetActorHiddenInGame(true);
             SetActorEnableCollision(false);
-
-            /*
+            
+            
             if (UWorld* World = GetWorld())
             {
                 if(ATP_ThirdPersonGameMode* GameMode = Cast<ATP_ThirdPersonGameMode>(World->GetAuthGameMode()))
@@ -46,7 +46,7 @@ void AItem::OnOverLapBegin(UPrimitiveComponent* OverlappedComponent, AActor* Oth
                     SetActorEnableCollision(false);
                 }
             }
-            */
+            
         }
     }
 }
@@ -57,4 +57,9 @@ void AItem::RespawnItem()
 
     SetActorHiddenInGame(false);
     SetActorEnableCollision(true);
+}
+
+void AItem::OnCollected()
+{
+
 }
