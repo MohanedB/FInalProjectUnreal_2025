@@ -36,8 +36,8 @@ void ALethalLaser::Tick(float DeltaTime)
 
 void ALethalLaser::LaserAppear()
 {
-    // 1) On récupère le GameMode et son timer
-    auto GM = Cast<ATP_ThirdPersonGameMode>(UGameplayStatics::GetGameMode(this));
+
+    ATP_ThirdPersonGameMode* GM = Cast<ATP_ThirdPersonGameMode>(UGameplayStatics::GetGameMode(this));
     if (!GM)
         return;
 
@@ -45,7 +45,6 @@ void ALethalLaser::LaserAppear()
 
     bool bShouldBeOn = (t >= 1.0f) && (FMath::Fmod(t - 1.0f, 3.0f) < 2.0f);
 
-    // 3) Si l’état désiré diffère de l’état actuel, on bascule une fois
     if (bShouldBeOn && !LaserOn)
     {
         LaserOn = true;
